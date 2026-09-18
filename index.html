@@ -1,12 +1,227 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的主页</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>男装招商 · 主理人手记</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F7F3EA',
+        ink: '#1E1B16',
+        vermilion: '#C8442B',
+        sand: '#E8DCC6',
+        moss: '#3A4A3C'
+      },
+      fontFamily: {
+        display: ['"Noto Serif SC"', 'serif'],
+        body: ['"Noto Sans SC"', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: 'Noto Sans SC', sans-serif; background: #F7F3EA; color: #1E1B16; }
+  .display { font-family: 'Noto Serif SC', serif; }
+  .grain::before {
+    content:""; position: fixed; inset:0; pointer-events:none; z-index:50; opacity:.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .fade-up { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .fade-up.show { opacity:1; transform:none; }
+  .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -18px rgba(30,27,22,.35); }
+  .underline-grow { position:relative; }
+  .underline-grow::after {
+    content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:#C8442B; transition:width .4s ease;
+  }
+  .underline-grow:hover::after { width:100%; }
+</style>
 </head>
-<body>
-    <h1>欢迎来到我的网站</h1>
-    <p>这是 jiangxiaer.github.io 的第一个页面。</p>
+<body class="grain">
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-ink/10">
+  <div class="max-w-5xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-vermilion text-paper display font-bold flex items-center justify-center">招</div>
+      <span class="display font-bold tracking-wide">男装招商 · 主理人手记</span>
+    </div>
+    <div class="hidden md:flex gap-7 text-sm text-ink/70">
+      <a href="#hot" class="underline-grow">招品</a>
+      <a href="#styles" class="underline-grow">风格方向</a>
+      <a href="#guide" class="underline-grow">入驻指南</a>
+      <a href="#contact" class="underline-grow">联系</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="max-w-5xl mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-16">
+  <p class="fade-up text-vermilion text-sm tracking-[.3em] font-medium mb-5">MENSWEAR · MERCHANDISING</p>
+  <h1 class="fade-up display font-black text-5xl md:text-6xl leading-[1.1]">
+    与男装商家<br>一起做点 <span class="text-vermilion">好货</span>
+  </h1>
+  <p class="fade-up mt-8 max-w-xl text-ink/70 text-lg leading-relaxed">
+    我是 Temu 平台男装品类招商运营，负责男装商家的同款 / 爆款招商。这里会分享招品信息、流行元素设计与入驻指引，欢迎交流和对接。
+  </p>
+  <div class="fade-up mt-10 flex flex-wrap gap-4">
+    <a href="#hot" class="bg-ink text-paper px-7 py-3.5 rounded-full font-medium hover:bg-vermilion transition-colors">看招品方向</a>
+    <a href="#contact" class="border border-ink/25 px-7 py-3.5 rounded-full font-medium hover:border-vermilion hover:text-vermilion transition-colors">找我沟通</a>
+  </div>
+
+  <!-- marquee -->
+  <div class="fade-up mt-14 border-y border-ink/10 py-4 overflow-hidden">
+    <div class="flex whitespace-nowrap animate-[scroll_28s_linear_infinite]">
+      <div class="flex">
+        <span class="mx-6 display text-ink/60">运动复古卫衣</span>
+        <span class="mx-6 display text-ink/60">街头潮牌外套</span>
+        <span class="mx-6 display text-ink/60">刺绣工艺</span>
+        <span class="mx-6 display text-ink/60">字母印花</span>
+        <span class="mx-6 display text-ink/60">拼接设计</span>
+        <span class="mx-6 display text-ink/60">落肩宽松版型</span>
+      </div>
+      <div class="flex">
+        <span class="mx-6 display text-ink/60">运动复古卫衣</span>
+        <span class="mx-6 display text-ink/60">街头潮牌外套</span>
+        <span class="mx-6 display text-ink/60">刺绣工艺</span>
+        <span class="mx-6 display text-ink/60">字母印花</span>
+        <span class="mx-6 display text-ink/60">拼接设计</span>
+        <span class="mx-6 display text-ink/60">落肩宽松版型</span>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- HOT RECRUITMENT -->
+<section id="hot" class="max-w-5xl mx-auto px-6 md:px-10 py-16">
+  <div class="flex items-end justify-between mb-10">
+    <div>
+      <p class="text-vermilion text-sm tracking-[.3em] font-medium mb-3">01 / 招品</p>
+      <h2 class="display font-black text-3xl md:text-4xl">本期主推 · 正在招商</h2>
+    </div>
+    <div class="text-ink/40 hidden md:block"><span class="display text-3xl">'</span> 同款 / 爆款 </div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <article class="card-hover bg-white rounded-2xl p-7 border border-ink/8">
+      <div class="w-11 h-11 rounded-xl bg-sand display font-bold flex items-center justify-center mb-5">卫</div>
+      <h3 class="display font-bold text-xl mb-3">运动复古卫衣</h3>
+      <p class="text-ink/60 leading-relaxed text-sm">运动复古风卫衣，宽松落肩版型，重点看刺绣与字母印花工艺，适合作为秋冬主力款招商。</p>
+    </article>
+    <article class="card-hover bg-white rounded-2xl p-7 border border-ink/8">
+      <div class="w-11 h-11 rounded-xl bg-sand display font-bold flex items-center justify-center mb-5">外</div>
+      <h3 class="display font-bold text-xl mb-3">街头潮牌外套</h3>
+      <p class="text-ink/60 leading-relaxed text-sm">街头潮牌运动外套，主打拼接设计与品牌感细节，吸睛度高、动销快，欢迎优质工厂与开发款。</p>
+    </article>
+    <article class="card-hover bg-white rounded-2xl p-7 border border-ink/8">
+      <div class="w-11 h-11 rounded-xl bg-sand display font-bold flex items-center justify-center mb-5">款</div>
+      <h3 class="display font-bold text-xl mb-3">同款 · 改款开发</h3>
+      <p class="text-ink/60 leading-relaxed text-sm">参考平台元素库的方向开发改款，而非 1:1 照搬。保留设计亮点，规避侵权风险，潜力更大。</p>
+    </article>
+  </div>
+</section>
+
+<!-- STYLE DIRECTIONS -->
+<section id="styles" class="bg-ink text-paper py-16">
+  <div class="max-w-5xl mx-auto px-6 md:px-10">
+    <div class="mb-10">
+      <p class="text-sand text-sm tracking-[.3em] font-medium mb-3">02 / 风格</p>
+      <h2 class="display font-black text-3xl md:text-4xl">本期设计关键词</h2>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">运动复古</span>
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">街头潮牌</span>
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">刺绣</span>
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">字母印花</span>
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">拼接</span>
+      <span class="border border-paper/20 px-5 py-2.5 rounded-full text-sm hover:bg-vermilion hover:border-vermilion transition-colors">落肩宽松</span>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-px bg-paper/15">
+      <div class="bg-ink p-7">
+        <p class="display text-4xl font-black text-sand">01</p>
+        <p class="mt-3 display font-bold">品类 + 款式</p>
+        <p class="mt-2 text-paper/60 text-sm leading-relaxed">清晰点明品类与款式，让商家一眼定位方向。</p>
+      </div>
+      <div class="bg-ink p-7">
+        <p class="display text-4xl font-black text-sand">02</p>
+        <p class="mt-3 display font-bold">元素 + 版型</p>
+        <p class="mt-2 text-paper/60 text-sm leading-relaxed">给出风格、设计元素与版型关键词，指导开发。</p>
+      </div>
+      <div class="bg-ink p-7">
+        <p class="display text-4xl font-black text-sand">03</p>
+        <p class="mt-3 display font-bold">改款 · 合规</p>
+        <p class="mt-2 text-paper/60 text-sm leading-relaxed">引导做相似款改款开发，保留合规提示、规避侵权。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GUIDE -->
+<section id="guide" class="max-w-5xl mx-auto px-6 md:px-10 py-16">
+  <div class="mb-10">
+    <p class="text-vermilion text-sm tracking-[.3em] font-medium mb-3">03 / 指南</p>
+    <h2 class="display font-black text-3xl md:text-4xl">商家合作 · 三步走</h2>
+  </div>
+  <ol class="space-y-6">
+    <li class="flex gap-5 item-fade">
+      <div class="shrink-0 w-10 h-10 rounded-full bg-vermilion text-paper display font-bold flex items-center justify-center">1</div>
+      <div>
+        <h3 class="display font-bold text-lg">参考元素库开发</h3>
+        <p class="text-ink/60 mt-1 text-sm leading-relaxed">根据平台流行元素方向，进行开发打样，避免 1:1 照搬，保留设计亮点。</p>
+      </div>
+    </li>
+    <li class="flex gap-5 item-fade">
+      <div class="shrink-0 w-10 h-10 rounded-full bg-vermilion text-paper display font-bold flex items-center justify-center">2</div>
+      <div>
+        <h3 class="display font-bold text-lg">提交样品对接</h3>
+        <p class="text-ink/60 mt-1 text-sm leading-relaxed">同步样品与价格，我这边协助评估并推进后续上架流程。</p>
+      </div>
+    </li>
+    <li class="flex gap-5 item-fade">
+      <div class="shrink-0 w-10 h-10 rounded-full bg-vermilion text-paper display font-bold flex items-center justify-center">3</div>
+      <div>
+        <h3 class="display font-bold text-lg">合规同款改款</h3>
+        <p class="text-ink/60 mt-1 text-sm leading-relaxed">相似款记得做同款改款，规避侵权风险，让商品长久稳定地卖。</p>
+      </div>
+    </li>
+  </ol>
+  <div class="mt-10 rounded-2xl border border-vermilion/30 bg-vermilion/5 p-6">
+    <p class="display font-bold text-vermilion">温馨提示</p>
+    <p class="text-ink/60 text-sm mt-2 leading-relaxed">相似款请注意改款开发，规避侵权风险。后台类目路径与具体招品信息，请在对接时确认。</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-moss text-paper py-16">
+  <div class="max-w-5xl mx-auto px-6 md:px-10">
+    <p class="text-sand text-sm tracking-[.3em] font-medium mb-3">04 / 联系</p>
+    <h2 class="display font-black text-3xl md:text-4xl mb-6">欢迎来聊</h2>
+    <p class="text-paper/70 max-w-xl leading-relaxed">无论是新款开发方向、招品问题，还是入驻对接，都可以直接联系我。期待与你一起把好货做起来。</p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="#" class="bg-paper text-ink px-7 py-3.5 rounded-full font-medium hover:bg-vermilion hover:text-paper transition-colors">私信沟通</a>
+      <a href="#" class="border border-paper/25 px-7 py-3.5 rounded-full font-medium hover:border-sand hover:text-sand transition-colors">商务合作</a>
+    </div>
+    <p class="mt-12 pt-6 border-t border-paper/15 text-paper/40 text-xs">男士服饰 · 招商运营 · 主理人手记</p>
+  </div>
+</section>
+
+<script>
+  // reveal on scroll
+  const reveal = document.querySelectorAll('.fade-up, .item-fade');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  reveal.forEach(el=>io.observe(el));
+
+  // marquee keyframes
+  const style = document.createElement('style');
+  style.textContent = '@keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }';
+  document.head.appendChild(style);
+</script>
 </body>
 </html>
